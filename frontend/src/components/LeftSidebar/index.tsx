@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
 import SidebarTrigger from '@/components/header/SidebarTrigger';
-import { Sidebar, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
+import { Sidebar, SidebarHeader } from '@/components/ui/sidebar';
 
 import NewChatButton from '../header/NewChat';
+import { DeleteChatButton } from './DeleteChatsButton';
 import SearchChats from './Search';
 import { ThreadHistory } from './ThreadHistory';
 
@@ -18,12 +19,12 @@ export default function LeftSidebar({
           <SidebarTrigger />
           <div className="flex items-center">
             <SearchChats />
+            <DeleteChatButton />
             <NewChatButton navigate={navigate} />
           </div>
         </div>
       </SidebarHeader>
       <ThreadHistory />
-      <SidebarRail />
     </Sidebar>
   );
 }
